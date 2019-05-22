@@ -7,33 +7,37 @@
     <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
   </head>
   <body>
-    <div id="map" style="height:600px; width:100%"></div>
+    <div id="map" style="height:100%; width:100%"></div>
     <script>
-    var map = L.map("map").setView([38.732329, -9.160455], 10);
+    var map = L.map("map");
+      
     L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
       subdomains: 'abcd',
       maxZoom: 19
-      }).addTo(map);
+    }).addTo(map);
+      
     L.marker([38.732235, -9.160366]).addTo(map);
+      
     L.Routing.control({
       waypoints: [
         L.latLng(57.74, 11.94),
-        L.latLng(57.6792, 11.949)
+        L.latLng(38.732235, -9.160366)
       ]
-      }).addTo(map);
+    }).addTo(map);
     
     var points = [
-  [38.73098724394945, -9.159668684005737],
-  [38.73015866055299, -9.159711599349976],
-  [38.73011681265176, -9.158810377120972],
-  [38.7306022467989, -9.157898426055908],
-  [38.731414086190945, -9.157887697219849],
-  [38.73149778044903, -9.158896207809448],
-  [38.73098724394945, -9.159668684005737]
-];
+      [38.73098724394945, -9.159668684005737],
+      [38.73015866055299, -9.159711599349976],
+      [38.73011681265176, -9.158810377120972],
+      [38.7306022467989, -9.157898426055908],
+      [38.731414086190945, -9.157887697219849],
+      [38.73149778044903, -9.158896207809448],
+      [38.73098724394945, -9.159668684005737]
+    ];
       
-    var polygon = L.polygon(points, {color: 'red'}).addTo(map);      
+    var polygon = L.polygon(points, {color: 'red'}).addTo(map);
+    
     </script>
   </body>
 </html>
