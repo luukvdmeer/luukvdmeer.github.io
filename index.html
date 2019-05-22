@@ -27,6 +27,14 @@
   [38.73098724394945, -9.159668684005737]
 ];
 var polygon = L.polygon(points, {color: 'red'}).addTo(map);
+
+L.Routing.control({
+  waypoints: [
+    L.latLng(57.74, 11.94),
+    L.latLng(57.6792, 11.949)
+  ]
+}).addTo(map);
+      
     </script>
   </body>
 </html>
