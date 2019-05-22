@@ -3,11 +3,13 @@
     <title>Leaflet Routing</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
   </head>
   <body>
     <div id="map" style="height:100%; width:100%"></div>
     <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
     <script>
       var map = L.map("map");
       
@@ -20,7 +22,8 @@
           L.latLng(47.8223568, 13.039701),
           L.latLng(48.311885, 14.2991776)
         ],
-        routeWhileDragging: true
+        routeWhileDragging: true,
+        geocoder: L.Control.Geocoder.nominatim()
       }).addTo(map); 
     </script>
   </body>
